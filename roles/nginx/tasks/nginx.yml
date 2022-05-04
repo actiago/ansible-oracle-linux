@@ -1,0 +1,4 @@
+- name: Install the latest version of Nginx
+  yum:
+    name: nginx
+    state: latest

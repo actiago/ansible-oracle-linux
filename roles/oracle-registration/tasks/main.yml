@@ -1,0 +1,5 @@
+---
+
+- name: Automating Unbreakable Linux Network (ULN) registration
+  command:
+    cmd: 'ulnreg_ks --username=mail@mydom.com --password=PASSWD --csi=CSI'

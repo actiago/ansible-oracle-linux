@@ -1,0 +1,21 @@
+---
+
+- name: Download KSplice
+  get_url:
+    url: https://www.ksplice.com/uptrack/install-uptrack
+    dest: ~/install-uptrack
+
+- name: Install KSPlice
+  command:
+    cmd: 'sh install-uptrack < UPTRACK ID CODE > --autoinstall'
+  register: install
+
+- name: Upgrade Ksplice
+  command:
+    cmd: '/usr/sbin/uptrack-upgrade -y'
+  register: upgrade
+
+- name: Info
+  debug:
+    var:
+    - upgrade.stdout

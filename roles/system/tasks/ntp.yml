@@ -1,0 +1,28 @@
+---
+
+- name: Install chrony
+  yum:
+    name: chrony
+    state: latest
+
+- name: Configure chrony
+  template:
+    src: ../templates/chrony.conf.j2
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Restart chrony service
+  service:
+    name: chronyd
+    state: restarted
+
+- name: Verifica chrony sources
+  command:
+    cmd: 'chronyc sources'
+  register: sources
+
+- name: Apresenta sources
+  debug:
+    var: sources.stdout

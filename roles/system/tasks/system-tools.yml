@@ -1,0 +1,11 @@
+---
+
+- name: Install system tools
+  yum:
+    name:
+      - net-tools
+      - telnet
+      - vim
+      - psmisc
+      - chrony
+    state: latest

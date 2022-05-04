@@ -1,0 +1,13 @@
+---
+- name: Server - Prepare System
+  hosts: hmlserver
+
+  roles:
+    - role: system
+      tags: system
+    - role: install-ksplice
+      tags: install-ksplice
+    - role: oracle-registration
+      tags: oracle-registration
+    - role: disable-firewall
+      tags: disable-firewall

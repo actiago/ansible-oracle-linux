@@ -1,0 +1,14 @@
+---
+
+- name: Install environment dependencies
+  yum:
+    name:
+      - realmd
+      - sssd
+      - krb5-workstation
+      - samba-common-tools
+      - krb5-libs.*
+      - oddjob
+      - oddjob-mkhomedir
+      - adcli
+    state: latest
